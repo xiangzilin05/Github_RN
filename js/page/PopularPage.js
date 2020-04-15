@@ -69,6 +69,15 @@ class PopularTab extends Component {
             );
           }}
         />
+        <Button
+          title={'AsyncStorage Use'}
+          onPress={() => {
+            NavigationUtil.goPage(
+              {navigation: this.props.navigation},
+              'AsyncStorageDemoPage',
+            );
+          }}
+        />
       </View>
     );
   }
