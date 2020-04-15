@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import DetailPage from '../page/DetailPage';
+import FetchDemoPage from '../page/FetchDemoPage';
 
 const InitNavigator = createStackNavigator({
   WelcomePage: {
@@ -20,7 +21,14 @@ const MainNavigator = createStackNavigator({
       header: null, // 隐藏头部
     },
   },
-  DetailPage: DetailPage,
+  DetailPage: {
+    screen: DetailPage,
+    navigationOptions: {},
+  },
+  FetchDemoPage: {
+    screen: FetchDemoPage,
+    navigationOptions: {},
+  },
 });
 
 export default createAppContainer(
