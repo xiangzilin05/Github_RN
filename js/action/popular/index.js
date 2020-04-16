@@ -8,9 +8,19 @@ export function onLoadPopularData(storeName, url) {
       storeName: storeName,
     });
     let dataStore = new DataStore();
-    dataStore.fetchData(url).then((data) => {
-      handleData(dispatch, storeName, data);
-    });
+    dataStore
+      .fetchData(url)
+      .then((data) => {
+        handleData(dispatch, storeName, data);
+      })
+      .catch((error) => {
+        console.log(error);
+        dispatch({
+          type: Types.LOAD_POPULAR_FAIL,
+          storeName: storeName,
+          error,
+        });
+      });
   };
 }
 
